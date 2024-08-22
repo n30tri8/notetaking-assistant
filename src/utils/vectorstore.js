@@ -56,6 +56,7 @@ function hashContent(content) {
     }
     return hash;
 }
+
 function sanitizeUrlForFilename(url) {
     // Extract the domain and path from the URL
     const urlObj = new URL(url);
@@ -64,6 +65,11 @@ function sanitizeUrlForFilename(url) {
 
     // Combine domain and path with underscores
     return `${domain}${path}`;
+}
+
+function createDocumentTitle(url, content) {
+    const sanitizedUrl = sanitizeUrlForFilename(url);
+    return sanitizedUrl + "-" + hashContent(content);
 }
 
 export async function enumerateAllSimilarityConnections() {
@@ -76,15 +82,13 @@ export async function enumerateAllSimilarityConnections() {
         results.shift();
 
         const content = vectorStore.docstore._docs.get(doc_id.toString())["pageContent"]
-        const sanitizedUrl = sanitizeUrlForFilename(vectorStore.docstore._docs.get(doc_id.toString())["metadata"]["source"]);
-        const title = sanitizedUrl + "-" + hashContent(content);
+        const title = createDocumentTitle(vectorStore.docstore._docs.get(doc_id.toString())["metadata"]["source"], content)
         connectedDocuments.push({
             "title": title,
             "content": content,
             "links": results.map(([id, score]) => {
                 const similarDocContent = id["pageContent"];
-                const similarDocSanitizedUrl = sanitizeUrlForFilename(id["metadata"]["source"]);
-                const similarDocTitle = similarDocSanitizedUrl + "-" + hashContent(similarDocContent);
+                const similarDocTitle = createDocumentTitle(id["metadata"]["source"], similarDocContent)
                 return similarDocTitle;
             })
         });
