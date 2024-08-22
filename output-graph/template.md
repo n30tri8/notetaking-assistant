@@ -1,0 +1,6 @@
+{{content}}
+
+# Links:
+{{#links}}
+[[{{.}}]]
+{{/links}}
