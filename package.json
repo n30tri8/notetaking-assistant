@@ -21,6 +21,7 @@
     "hnswlib-node": "^3.0.0",
     "langchain": "^0.2.16",
     "mustache": "^4.2.0",
+    "readline-sync": "^1.4.10",
     "zod": "^3.23.8"
   },
   "devDependencies": {

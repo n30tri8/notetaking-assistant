@@ -3,9 +3,8 @@ import {llm} from "./utils/llm.js";
 import {ChatPromptTemplate} from "@langchain/core/prompts";
 import {StringOutputParser} from "@langchain/core/output_parsers";
 import {createStuffDocumentsChain} from "langchain/chains/combine_documents";
+import readlineSync from 'readline-sync';
 
-
-let inputQuery = "what is task decomposition?";
 
 //Retrieve and generate using the relevant snippets of the blog.
 const vectorStore = await loadVectorStore();
@@ -24,6 +23,8 @@ const ragChain = await createStuffDocumentsChain({
     prompt,
     outputParser: new StringOutputParser(),
 });
+
+let inputQuery = readlineSync.question('Please type the query:');
 
 const retrievedDocs = await retriever.invoke(inputQuery);
 

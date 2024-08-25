@@ -6,6 +6,7 @@ const retriever = vectorStore.asRetriever();
 import {StateGraphArgs} from "@langchain/langgraph";
 import {Document, type DocumentInterface} from "@langchain/core/documents";
 
+
 /**
  * Represents the state of our graph.
  */
@@ -275,8 +276,12 @@ workflow.addEdge("generate", END);
 // Compile
 const app = workflow.compile();
 
+import readlineSync from 'readline-sync';
+
+let inputQuery = readlineSync.question('Please type the query:');
+
 const inputs = {
-    question: "Explain how the different types of agent memory work.",
+    question: inputQuery,
 };
 const config = {recursionLimit: 50};
 let finalGeneration;
