@@ -16,13 +16,10 @@ const docs = await Promise.all(
 const unprocessedDocument = docs.flat();
 
 const textSplitter = new RecursiveCharacterTextSplitter({
-    // chunkSize: 1000,
-    // chunkOverlap: 200,
-    chunkSize: 400,
-    chunkOverlap: 10,
+    chunkSize: 1000,
+    chunkOverlap: 200,
 });
-const documents = (await textSplitter.splitDocuments(unprocessedDocument)).slice(0, 30);
-// const splits = await textSplitter.splitDocuments(docs);
+const splits = await textSplitter.splitDocuments(unprocessedDocument);
 const vectorStore = await initVectorStoreFromDocuments(documents);
 
 let connectedDocuments = await enumerateAllSimilarityConnections();

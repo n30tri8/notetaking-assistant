@@ -279,7 +279,7 @@ const app = workflow.compile();
 
 import readlineSync from 'readline-sync';
 
-let inputQuery = readlineSync.question('Please type the query:');
+let inputQuery = readlineSync.question('Please type the query: ');
 
 const inputs = {
     question: inputQuery,

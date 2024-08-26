@@ -24,7 +24,7 @@ const ragChain = await createStuffDocumentsChain({
     outputParser: new StringOutputParser(),
 });
 
-let inputQuery = readlineSync.question('Please type the query:');
+let inputQuery = readlineSync.question('Please type the query: ');
 
 const retrievedDocs = await retriever.invoke(inputQuery);
 

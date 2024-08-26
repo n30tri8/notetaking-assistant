@@ -290,7 +290,7 @@ const app = workflow.compile();
 
 import readlineSync from 'readline-sync';
 
-let inputQuery = readlineSync.question('Please type the query:');
+let inputQuery = readlineSync.question('Please type the query: ');
 
 
 import { HumanMessage } from "@langchain/core/messages";

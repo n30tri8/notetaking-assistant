@@ -6,8 +6,8 @@
   "scripts": {
     "create-graph": "node --env-file .env src/create-graph.js",
     "basic-RAG": "node --env-file .env src/basic-RAG.js",
-    "corrective-RAG": "node --env-file .env --import=tsx src/corrective-RAG.ts",
-    "agentic-RAG": "node --env-file .env --import=tsx src/agentic-RAG.ts"
+    "agentic-RAG": "node --env-file .env --import=tsx src/agentic-RAG.ts",
+    "corrective-RAG": "node --env-file .env --import=tsx src/corrective-RAG.ts"
   },
   "keywords": [],
   "author": "",
