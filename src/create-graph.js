@@ -19,7 +19,7 @@ const textSplitter = new RecursiveCharacterTextSplitter({
     chunkSize: 1000,
     chunkOverlap: 200,
 });
-const splits = await textSplitter.splitDocuments(unprocessedDocument);
+const documents = await textSplitter.splitDocuments(unprocessedDocument);
 const vectorStore = await initVectorStoreFromDocuments(documents);
 
 let connectedDocuments = await enumerateAllSimilarityConnections();
