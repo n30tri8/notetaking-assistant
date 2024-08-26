@@ -1,3 +1,4 @@
+// @ts-ignore
 import {loadVectorStore} from "./utils/vectorstore.js";
 
 const vectorStore = await loadVectorStore();

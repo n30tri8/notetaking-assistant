@@ -6,7 +6,8 @@
   "scripts": {
     "create-graph": "node --env-file .env src/create-graph.js",
     "basic-RAG": "node --env-file .env src/basic-RAG.js",
-    "corrective-RAG": "node --env-file .env --import=tsx src/corrective-RAG.ts"
+    "corrective-RAG": "node --env-file .env --import=tsx src/corrective-RAG.ts",
+    "agentic-RAG": "node --env-file .env --import=tsx src/agentic-RAG.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +15,6 @@
   "description": "",
   "dependencies": {
     "@langchain/community": "^0.2.28",
-    "@langchain/core": "^0.2.28",
     "@langchain/langgraph": "^0.0.34",
     "@langchain/openai": "^0.2.7",
     "cheerio": "^1.0.0",
@@ -22,9 +22,15 @@
     "langchain": "^0.2.16",
     "mustache": "^4.2.0",
     "readline-sync": "^1.4.10",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "zod-to-json-schema": "^3.23.2"
+  },
+  "overrides": {
+    "@langchain/core": "^0.2.28"
   },
   "devDependencies": {
-    "tsx": "^4.17.0"
+    "@types/readline-sync": "^1.4.8",
+    "tsx": "^4.17.0",
+    "typescript": "^5.5.4"
   }
 }
