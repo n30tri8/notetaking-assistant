@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "target": "es2022",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "outDir": "./src",
+    "rootDir": "./src",
+    "allowJs": true
+  },
+  "include": ["src/**/*.ts", "src/utils/vectorstore.d.ts"],
+  "exclude": ["node_modules"]
+}
