@@ -12,6 +12,7 @@ The project is at early stages of development.
 
 ## How to Run
 1. Clone the repository. Go to the project root.
+2. Install node.js version 20.16 or higher.
 2. Install the dependencies using `npm install`
 3. Create .env file that includes your LLM API key
 4. Run `npm run create-graph` to initialize embedding store and create the graph
