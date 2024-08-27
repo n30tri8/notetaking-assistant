@@ -18,7 +18,7 @@ The project is at early stages of development.
 5. Run `npm run create-graph` to initialize embedding store and create the graph
    - The vector store is created in `~ProjectRoot/vectorstore`
 
-To run the question-answering system, run either of the following commands:
+#### To run the question-answering system, run either of the following commands:
 - Run `npm run basic-RAG` to run the basic RAG system. You will be prompted to enter a question.
 - Run `npm run agentic-RAG` to run the Agentic RAG system. You will be prompted to enter a question.
 
@@ -31,7 +31,7 @@ Task decomposition is the process of breaking down large tasks into smaller, man
 When you run Agentic RAG, the program also outputs the state of the system at each step.
 
 
-To get Obsidian graph view of the notes:
+#### To get Obsidian graph view of the notes:
 1. Install Obsidian
 2. Copy the folder `~ProjectRoot/output-graph/output` to your Obsidian vault
 3. Open graph view in Obsidian
