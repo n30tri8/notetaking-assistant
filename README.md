@@ -28,6 +28,7 @@ npm run basic-RAG
 Please type the query: What is task decomposition?
 Task decomposition is the process of breaking down large tasks into smaller, manageable ...
 ```
+When you run Agentic RAG, the program also outputs the state of the system at each step.
 
 
 To get Obsidian graph view of the notes:
