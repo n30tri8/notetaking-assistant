@@ -11,12 +11,12 @@ The other feature of this project is question-answering on personal notes using 
 The project is at early stages of development.
 
 ## How to Run
-1. Clone the repository. Go to the project root.
-2. Install node.js version 20.16 or higher.
-2. Install the dependencies using `npm install`
-3. Create .env file that includes your LLM API key
-4. Run `npm run create-graph` to initialize embedding store and create the graph
-- The vector store is created in `~ProjectRoot/vectorstore`
+1. Install node.js version 20.16 or higher.
+2. Clone the repository. Go to the project root.
+3. Install the dependencies using `npm install`
+4. Create .env file that includes your OpenAI API key
+5. Run `npm run create-graph` to initialize embedding store and create the graph
+   - The vector store is created in `~ProjectRoot/vectorstore`
 
 To run the question-answering system, run either of the following commands:
 - Run `npm run basic-RAG` to run the basic RAG system. You will be prompted to enter a question.
@@ -37,3 +37,5 @@ To get Obsidian graph view of the notes:
 
 ## Set Input Notes to Create Graph from
 Currently, you can add a list of URLs as input. Set the list in `create-graph.js` file in the `urls` variable.
+
+The current default list is a set of blogs from Lilian Weng's blog.
